@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="fa-IR" dir="rtl">
       <body className={vazirMatn.className}>
-        <div className="relative">
+        <div className="relative container mx-auto">
           <HeaderSection />
           {children}
         </div>
