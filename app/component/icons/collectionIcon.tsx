@@ -10,7 +10,7 @@ const CollectionIcon = ({ width = 40, height = 40 }: IIconProps) => {
       viewBox="0 0 24 24"
     >
       <path
-        stroke="#1C274C"
+        stroke="white"
         strokeLinecap="round"
         strokeWidth="1.5"
         d="M20 7H4M15 12H4M9 17H4"
