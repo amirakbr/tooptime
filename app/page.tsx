@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import HeroSlider from "./component/landingPage/heroSlider";
+import ExpressSearch from "./component/landingPage/expressSearch/expressSearch";
 
 export const metadata: Metadata = {
   title: "toopita",
@@ -12,6 +12,7 @@ export default function Home() {
     <div>
       <div>
         <HeroSlider />
+        <ExpressSearch />
       </div>
     </div>
   );

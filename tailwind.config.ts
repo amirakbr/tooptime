@@ -14,6 +14,10 @@ const config: Config = {
       },
       colors: {
         primary: "#DE866A",
+        bodyBackGround: "#E6E6E6",
+        peach: "#E2A08C",
+        darkPeach: "#CC9380",
+        darkerPeach: "#955845",
       },
     },
   },
