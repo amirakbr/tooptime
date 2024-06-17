@@ -1,12 +1,9 @@
 import { Control, FieldValues, Path } from "react-hook-form";
 
-export interface IInput<TFieldValues extends FieldValues> {
+export interface ISelect<TFieldValues extends FieldValues> {
   control: Control<TFieldValues>;
   name: Path<TFieldValues>;
-  type: "text";
-  label?: string;
-  required?: boolean;
+  options: any;
   placeHolder?: string;
-  className?: string;
-
+  getOptionLabel: (options: any) => string;
 }

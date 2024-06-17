@@ -26,7 +26,7 @@ const ExpressSearch = () => {
     },
   ];
   return (
-    <div className="grid grid-rows-[1fr_1.5fr] mt-4 rounded-lg overflow-hidden">
+    <div className="grid grid-rows-[1fr_auto] mt-4 rounded-lg overflow-hidden">
       <div className="grid grid-cols-2 cursor-pointer">
         {tabConfig.map(({ Icon, name, value }) => (
           <div
@@ -49,7 +49,7 @@ const ExpressSearch = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-[4fr_1fr]">
+      <div className="grid grid-cols-[4fr_1fr] bg-peach">
         {searchType === "location" ? (
           <LocationSearch control={control} />
         ) : null}
