@@ -1,10 +1,12 @@
-import Input from "../../input";
-import { ISearchByLocation } from "./interface";
+import Input from '../../input';
+import Select from '../../select';
+import FieldContainer from './fieldContainer';
+import { ISearchByLocation } from './interface';
 
 const LocationSearch = ({ control }: ISearchByLocation) => {
   return (
-    <div className="grid grid-cols-3 gap-2">
-      <div className="bg-darkPeach p-1">
+    <div className="grid grid-cols-3 gap-2 animate-appear">
+      <FieldContainer>
         <Input
           control={control}
           name="fieldName"
@@ -13,7 +15,13 @@ const LocationSearch = ({ control }: ISearchByLocation) => {
           className="!bg-white p-1 rounded"
           placeHolder="نام یا بخشی از نام مکان..."
         />
-      </div>
+      </FieldContainer>
+      <FieldContainer>
+        <Select control={control} name="fieldType" label="انتخاب شهر" options={[{ name: 'test', id: 'ok', tag: 'fd' }]} />
+      </FieldContainer>
+      <FieldContainer>
+        <Select control={control} name="city" label="نوع مکان" options={[{ name: 'test', id: 'ok', tag: 'fd' }]} />
+      </FieldContainer>
     </div>
   );
 };

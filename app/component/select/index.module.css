@@ -1,0 +1,107 @@
+.Select {
+  @apply flex
+    flex-col
+    rounded-md
+    cursor-default
+    self-start;
+}
+
+.label {
+  @apply text-primary
+    opacity-80
+    ps-2
+    pb-1
+    flex-1
+    text-black
+    truncate;
+}
+
+.label span {
+  @apply text-sm
+    text-red-500;
+}
+
+.control {
+  /*box-shadow: 0 0 0 1px var(--secondary-lighter);*/
+  @apply outline-0
+    cursor-default
+    rounded-lg
+    text-primary
+    leading-9
+    h-9
+    ps-3
+    w-full
+    truncate
+    flex
+    items-center;
+}
+
+.control:focus {
+  box-shadow: 0 0 0 2px var(--blue-light);
+}
+
+.Select.invalid .control {
+  @apply bg-red-300
+    /*text-secondary-light*/;
+}
+
+.Select.invalid .control:focus {
+  box-shadow: 0 0 0 2px var(--red-light);
+}
+
+.error {
+  @apply text-red-500
+    text-xs
+    ps-3
+    pt-2;
+}
+
+.icon {
+  @apply text-primary
+    opacity-50
+    m-[10px]
+    min-w-[18px];
+}
+
+.loader {
+  @apply text-primary
+    opacity-50
+    m-[8px]
+    animate-spin;
+}
+
+.option {
+  @apply min-h-[40px]
+    text-start
+    text-primary
+    mx-4
+    my-1
+    px-2
+    rounded-xl
+    items-center;
+}
+
+.option:not(.multi) {
+  @apply open:bg-blue-500
+    open:font-bold;
+}
+
+.option.multi {
+  @apply ps-7
+    relative
+    open:font-bold
+    open:underline;
+}
+
+.option.multi:after {
+  @apply content-['']
+    absolute
+    right-0
+    top-[50%]
+    -translate-y-[50%]
+    w-2
+    h-7
+    bg-primary
+    rounded-md
+    open:bg-primary;
+}

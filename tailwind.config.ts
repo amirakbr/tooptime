@@ -1,23 +1,28 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        primary: "#DE866A",
-        bodyBackGround: "#E6E6E6",
-        peach: "#E2A08C",
-        darkPeach: "#CC9380",
-        darkerPeach: "#955845",
+        primary: '#DE866A',
+        bodyBackGround: '#E6E6E6',
+        peach: '#E2A08C',
+        darkPeach: '#CC9380',
+        darkerPeach: '#955845',
+      },
+      keyframes: {
+        appear: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0px)' },
+        },
+      },
+      animation: {
+        appear: 'appear 0.2s linear forwards',
       },
     },
   },
