@@ -27,14 +27,14 @@ const HallDetailCard = ({
       <div className="overflow-hidden rounded relative">
         {discountPercent > 0 ? (
           <div className="absolute top-4 right-4 flex items-center justify-center gap-2 bg-green-800/50 backdrop-blur-sm rounded-lg text-lg text-white px-1 h-6 w-12">
-            <span className="mt-2">٪</span>
-            <span className="mt-2">{convertToFarsiDigits(`${discountPercent}`)}</span>
+            <span className="mt-1">٪</span>
+            <span className="mt-1">{convertToFarsiDigits(`${discountPercent}`)}</span>
           </div>
         ) : null}
         <HallImage cityName={cityName} complexName={complexName} imageUrl={mainImage} />
         <div className="absolute top-4 left-4 flex items-center justify-center gap-2 bg-slate-500/50 backdrop-blur-sm rounded-lg text-lg text-white px-1 h-6 w-12">
           <StartIcon width={10} height={10} />
-          <span className="mt-2">{convertToFarsiDigits(`${point}`)}</span>
+          <span className="mt-1">{convertToFarsiDigits(`${point}`)}</span>
         </div>
       </div>
       <div className="flex flex-col gap-4">
@@ -43,9 +43,13 @@ const HallDetailCard = ({
           <LocationIcon width={20} height={20} />
           <p>{convertToFarsiDigits(address)}</p>
         </div>
-        <div className="flex items-center gap-2 text-lg">
-          <PriceIcon width={20} height={20} />
-          {discountPercent > 0 ? <span className="text-green-500 font-semibold">{convertToFarsiDigits(`${discountedPrice}`)} تومان</span> : null}
+        <div className="flex items-end gap-2 text-lg">
+          <div className="flex items-center gap-2">
+            <PriceIcon width={20} height={20} />
+            {discountPercent > 0 ? (
+              <span className="text-green-500 font-semibold text-lg">{convertToFarsiDigits(`${discountedPrice}`)} تومان</span>
+            ) : null}
+          </div>
           {discountPercent > 0 ? (
             <del className="text-slate-500">{convertToFarsiDigits(`${price}`)} تومان</del>
           ) : (
