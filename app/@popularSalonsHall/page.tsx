@@ -10,7 +10,7 @@ const Page = async () => {
         <>
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-semibold">پر طرفدارها</h2>
-            <Link href="/">
+            <Link href="/hall/categoryType=1">
               <span className="text-lg border-b-2 border-b-black">مشاهده همه</span>
             </Link>
           </div>

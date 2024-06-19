@@ -9,10 +9,3 @@ export const getPopularHall = () => {
 export const getDisCountersHall = () => {
   return proxy.get<IPopularHallResult[]>('Hall/GetFilteredHalls?categoryType=0&pageSize=4&pageNumber=1');
 };
-
-// const popularHallKey = ['popularHall'];
-// export const usePopularHall = () =>
-//   useQuery({
-//     queryKey: popularHallKey,
-//     queryFn: getPopularHall,
-//   });
