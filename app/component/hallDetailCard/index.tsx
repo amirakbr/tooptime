@@ -6,9 +6,11 @@ import { convertToFarsiDigits } from '@/app/utils/formatNumber';
 import StartIcon from '../icons/starIcon';
 import LocationIcon from '../icons/locationIcon';
 import PriceIcon from '../icons/priceIcon';
+import { ErrorBoundaryHandler } from 'next/dist/client/components/error-boundary';
+import { NotFoundBoundary } from 'next/dist/client/components/not-found-boundary';
 
 const HallDetailCard = ({
-  adress,
+  address,
   cityName,
   commentsCount,
   complexName,
@@ -16,7 +18,7 @@ const HallDetailCard = ({
   discountedPrice,
   hallName,
   id,
-  mainImageUrl,
+  mainImage,
   point,
   price,
 }: Omit<IPopularHallResult, 'width' | 'sportsFieldNames' | 'sex' | 'options' | 'imageUrls' | 'height' | 'detailsOfFirstReservableTime'>) => {
@@ -29,7 +31,7 @@ const HallDetailCard = ({
             <span className="mt-2">{convertToFarsiDigits(`${discountPercent}`)}</span>
           </div>
         ) : null}
-        <HallImage cityName={cityName} complexName={complexName} imageUrl={mainImageUrl} />
+        <HallImage cityName={cityName} complexName={complexName} imageUrl={mainImage} />
         <div className="absolute top-4 left-4 flex items-center justify-center gap-2 bg-slate-500/50 backdrop-blur-sm rounded-lg text-lg text-white px-1 h-6 w-12">
           <StartIcon width={10} height={10} />
           <span className="mt-2">{convertToFarsiDigits(`${point}`)}</span>
@@ -39,7 +41,7 @@ const HallDetailCard = ({
         <h3 className="text-xl font-semibold">{convertToFarsiDigits(hallName)}</h3>
         <div className="flex items-center gap-2 text-lg">
           <LocationIcon width={20} height={20} />
-          <p>{convertToFarsiDigits(adress)}</p>
+          <p>{convertToFarsiDigits(address)}</p>
         </div>
         <div className="flex items-center gap-2 text-lg">
           <PriceIcon width={20} height={20} />

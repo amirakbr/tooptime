@@ -7,7 +7,7 @@ export interface IPopularHallResult {
   sex: any;
   width: any;
   height: any;
-  mainImageUrl: string;
+  mainImage: string;
   point: number;
   detailsOfFirstReservableTime: string;
   price: number;
@@ -16,5 +16,5 @@ export interface IPopularHallResult {
   imageUrls: any;
   commentsCount: number;
   options: any;
-  adress: string;
+  address: string;
 }

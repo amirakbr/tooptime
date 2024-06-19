@@ -8,10 +8,11 @@ const HallImage = ({ imageUrl, complexName, cityName }: { imageUrl: string; comp
       <Image
         width={286}
         height={200}
-        src={`https://${imageUrl}`}
+        src={`https://tooptime.com/files/${imageUrl}`}
         alt={`عکس سالن ${complexName} در ${cityName}`}
         className="w-full h-full object-cover object-center"
       />
+      {`https://${imageUrl}`}
     </>
   );
 };

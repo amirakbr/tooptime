@@ -52,7 +52,7 @@ const ExpressSearch = () => {
           type="button"
           role="search"
         >
-          <span className="text-2xl font-medium">جستجو</span>
+          <span className="text-xl font-medium">جستجو</span>
           <span className="mb-1">
             <SearchIcon width={30} height={25} color="black" />
           </span>
