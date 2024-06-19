@@ -7,7 +7,7 @@ const TimeSheetSearch = ({ control, cityOptions, fieldType }: ISearchByLocation)
   return (
     <div className="grid grid-cols-4 gap-2 animate-appear">
       <FieldContainer>
-        <Select control={control} name="fieldName" label="نوع مکان" options={fieldType} required />
+        <Select control={control} name="fieldType" label="نوع مکان" options={fieldType} required />
       </FieldContainer>
       <FieldContainer>
         <Select control={control} name="city" label="انتخاب شهر" options={cityOptions} required />
