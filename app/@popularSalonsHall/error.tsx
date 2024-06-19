@@ -2,7 +2,7 @@
 
 import ErrorVector from '../component/icons/errorVector';
 
-const Error = ({ reset }: { reset: () => void }) => {
+const PopularError = ({ reset }: { reset: () => void }) => {
   return (
     <div className="flex flex-col gap-4 items-center justify-center bg-white rounded-lg p-2">
       <p className="text-lg">دریافت لیست اماکن پر طرفدار با مشکل مواجه شد</p>
@@ -13,4 +13,4 @@ const Error = ({ reset }: { reset: () => void }) => {
     </div>
   );
 };
-export default Error;
+export default PopularError;

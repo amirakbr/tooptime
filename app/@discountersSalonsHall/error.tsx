@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import ErrorVector from '../component/icons/errorVector';
 
-const Error = () => {
+const DiscountersError = () => {
   const { refresh } = useRouter();
   return (
     <div className="flex flex-col gap-4 items-center justify-center bg-white rounded-lg p-2">
@@ -15,4 +15,4 @@ const Error = () => {
     </div>
   );
 };
-export default Error;
+export default DiscountersError;

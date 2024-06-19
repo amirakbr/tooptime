@@ -1,7 +1,7 @@
 'use client';
 
 import { ISelectOption, ISelectProps } from './interface';
-import React, { JSX, useEffect, useState } from 'react';
+import React, { JSX, use, useEffect, useState } from 'react';
 import { Controller, FieldValues } from 'react-hook-form';
 import classes from './index.module.css';
 import { default as Sel } from 'react-select';
@@ -12,7 +12,7 @@ export default function Select<TData extends FieldValues, TOption extends object
   label,
   options: op = [],
   /* @ts-ignore */
-  optionMapper = (option: TOption) => ({ label: option.name, value: option.id }),
+  optionMapper = (option: TOption) => ({ label: option.name, value: option.value }),
   direction = 'rtl',
   placeholder = 'انتخاب کنید',
   className,
@@ -39,6 +39,10 @@ export default function Select<TData extends FieldValues, TOption extends object
   }, [op]);
 
   useEffect(() => {
+    console.log('options', options);
+  }, [options]);
+
+  useEffect(() => {
     setPortal(document.body);
   }, [setPortal]);
 
@@ -63,12 +67,13 @@ export default function Select<TData extends FieldValues, TOption extends object
         render={({ field: { value: v, onChange }, fieldState: { invalid, error } }: any) => {
           const value = Array.isArray(v) ? v.map((item) => ({ ...item, ...optionMapper(item) })) : v ? { ...v, ...optionMapper(v) } : null;
 
+          console.log(value);
+
           return (
             <div className={`${classes.Select} ${className} ${invalid ? classes.invalid : ''} ${classes[direction]}`}>
               {label && (
                 <label htmlFor={name} className={classes.label}>
-                  {label} :
-                  {required && <span> *</span>}
+                  {label} :{required && <span> *</span>}
                 </label>
               )}
               <Sel

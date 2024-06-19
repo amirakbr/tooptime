@@ -3,14 +3,14 @@ import Select from '../../select';
 import FieldContainer from './fieldContainer';
 import { ISearchByLocation } from './interface';
 
-const TimeSheetSearch = ({ control }: ISearchByLocation) => {
+const TimeSheetSearch = ({ control, cityOptions, fieldType }: ISearchByLocation) => {
   return (
     <div className="grid grid-cols-4 gap-2 animate-appear">
       <FieldContainer>
-        <Select control={control} name="city" label="نوع مکان" options={[{ name: 'test', id: 'ok', tag: 'fd' }]} />
+        <Select control={control} name="fieldName" label="نوع مکان" options={fieldType} required />
       </FieldContainer>
       <FieldContainer>
-        <Select control={control} name="fieldType" label="انتخاب شهر" options={[{ name: 'test', id: 'ok', tag: 'fd' }]} />
+        <Select control={control} name="city" label="انتخاب شهر" options={cityOptions} required />
       </FieldContainer>
       <FieldContainer>
         <Select
@@ -24,6 +24,7 @@ const TimeSheetSearch = ({ control }: ISearchByLocation) => {
             { name: 'شنبه', value: 'saturday' },
             { name: 'شنبه', value: 'saturday' },
           ]}
+          required
         />
       </FieldContainer>
       <FieldContainer>
@@ -39,6 +40,7 @@ const TimeSheetSearch = ({ control }: ISearchByLocation) => {
             { name: '(03:00 - 11:00) صبح', value: 'saturday' },
             { name: '(03:00 - 11:00) صبح', value: 'saturday' },
           ]}
+          required
         />
       </FieldContainer>
     </div>

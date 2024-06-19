@@ -8,23 +8,44 @@ import LocationSearch from './locationSearch';
 import { IExpressSearchForm } from './interface';
 import SearchIcon from '../../icons/searchIcon';
 import TimeSheetSearch from './timeSheetSearch';
+import { useRouter } from 'next/navigation';
+
+const cityOptions = [{ name: 'مشهد', value: 1 }];
+const fieldType = [
+  { name: 'فوتبال', value: 0 },
+  { name: 'فوتسال', value: 1 },
+  { name: 'والیبال', value: 2 },
+  { name: 'تنیس', value: 3 },
+];
+
+const tabConfig = [
+  {
+    value: 'timeSheet',
+    name: 'جستجوی سانس',
+    Icon: SearchCalendarIcon,
+  },
+  {
+    value: 'location',
+    name: 'جستجوی در مکان',
+    Icon: FieldIcon,
+  },
+];
 
 const ExpressSearch = () => {
   const [searchType, setSearchType] = useState<'timeSheet' | 'location'>('timeSheet');
-  const { control } = useForm<IExpressSearchForm>();
+  const { control, handleSubmit, reset } = useForm<IExpressSearchForm>({ defaultValues: {} });
+  const router = useRouter();
 
-  const tabConfig = [
-    {
-      value: 'timeSheet',
-      name: 'جستجوی سانس',
-      Icon: SearchCalendarIcon,
-    },
-    {
-      value: 'location',
-      name: 'جستجوی در مکان',
-      Icon: FieldIcon,
-    },
-  ];
+  const handleSearch = handleSubmit((data) => {
+    console.log(data, 'data');
+    const { fieldName, fieldType, city, timeSlot, weekDay } = data;
+    if (searchType === 'location') {
+      router.push(`/hall?fieldName=${fieldName}&fieldType=${fieldType?.value}&city=${city?.value}`);
+    } else {
+      router.push(`/hall?timeSlot=${timeSlot?.value}&weekDay=${weekDay?.value}&fieldType=${fieldType?.value}&city=${city?.value}`);
+    }
+  });
+
   return (
     <div className="grid grid-rows-[1fr_auto] mt-4 rounded-lg overflow-hidden container mx-auto">
       <div className="grid grid-cols-2 cursor-pointer">
@@ -36,6 +57,7 @@ const ExpressSearch = () => {
             date-tabValue={value}
             onClick={({ currentTarget }: any) => {
               if (currentTarget) {
+                reset();
                 setSearchType(currentTarget.getAttribute('date-tabvalue'));
               }
             }}
@@ -46,11 +68,16 @@ const ExpressSearch = () => {
         ))}
       </div>
       <div className="grid grid-cols-[4fr_1fr] items-center bg-peach/70 p-2 gap-4">
-        {searchType === 'location' ? <LocationSearch control={control} /> : <TimeSheetSearch control={control} />}
+        {searchType === 'location' ? (
+          <LocationSearch control={control} cityOptions={cityOptions} fieldType={fieldType} />
+        ) : (
+          <TimeSheetSearch control={control} cityOptions={cityOptions} fieldType={fieldType} />
+        )}
         <button
           className="flex items-center justify-center gap-4 bg-white border-2 border-darkerPeach rounded-full h-1/2"
           type="button"
           role="search"
+          onClick={handleSearch}
         >
           <span className="text-xl font-medium">جستجو</span>
           <span className="mb-1">
