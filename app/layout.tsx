@@ -22,7 +22,7 @@ export default function RootLayout({
           <HeaderSection />
           {children}
           {pathName === '/' ? (
-            <div className="flex flex-col justify-evenly gap-8 mt-10 h-full">
+            <div className="flex flex-col justify-evenly gap-8 mt-8 h-full">
               {discountersSalonsHall}
               {popularSalonsHall}
             </div>
