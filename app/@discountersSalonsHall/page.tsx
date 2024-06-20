@@ -14,7 +14,7 @@ const Page = async () => {
               <span className="text-lg border-b-2 border-b-black">مشاهده همه</span>
             </Link>
           </div>
-          <div className="grid grid-cols-4 grid-rows-[20rem] gap-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 grid-rows-[20rem] gap-4">
             {popularHalls.map(
               ({ address, cityName, hallName, complexName, discountPercent, discountedPrice, point, price, mainImage, commentsCount, id }) => (
                 <HallDetailCard

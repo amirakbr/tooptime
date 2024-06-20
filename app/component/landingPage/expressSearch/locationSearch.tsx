@@ -5,7 +5,7 @@ import { ISearchByLocation } from './interface';
 
 const LocationSearch = ({ control, cityOptions, fieldType }: ISearchByLocation) => {
   return (
-    <div className="grid grid-cols-3 gap-2 animate-appear">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 animate-appear">
       <FieldContainer>
         <Input
           control={control}

@@ -5,7 +5,7 @@ import { ISearchByLocation } from './interface';
 
 const TimeSheetSearch = ({ control, cityOptions, fieldType }: ISearchByLocation) => {
   return (
-    <div className="grid grid-cols-4 gap-2 animate-appear">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 animate-appear">
       <FieldContainer>
         <Select control={control} name="fieldType" label="نوع مکان" options={fieldType} required />
       </FieldContainer>

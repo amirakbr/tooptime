@@ -17,12 +17,12 @@ export default function RootLayout({
 
   return (
     <html lang="fa-IR" dir="rtl" className="bg-bodyBackGround h-full">
-      <body className="h-full">
+      <body className="min-h-full h-auto">
         <div className="relative h-full flex flex-col">
           <HeaderSection />
           {children}
           {pathName === '/' ? (
-            <div className="flex flex-col justify-evenly gap-8 mt-8 h-full">
+            <div className="flex flex-col justify-evenly gap-8 mt-8 min-h-full">
               {discountersSalonsHall}
               {popularSalonsHall}
             </div>

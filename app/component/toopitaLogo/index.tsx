@@ -1,6 +1,6 @@
-import { IIconProps } from "./interface";
+import { IIconProps } from './interface';
 
-const ToopitaLogo = ({ width = 81, height = 92 }: IIconProps) => {
+const ToopitaLogo = ({ width = 81, height = 92, className = '' }: IIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,19 +9,12 @@ const ToopitaLogo = ({ width = 81, height = 92 }: IIconProps) => {
       height={height}
       fill="none"
       viewBox="0 0 81 92"
+      className={`${className}`}
     >
       <path fill="url(#pattern0_4242_1751)" d="M0 0H81V92H0z"></path>
       <defs>
-        <pattern
-          id="pattern0_4242_1751"
-          width="1"
-          height="1"
-          patternContentUnits="objectBoundingBox"
-        >
-          <use
-            transform="matrix(.00153 0 0 .00135 -.001 0)"
-            xlinkHref="#image0_4242_1751"
-          ></use>
+        <pattern id="pattern0_4242_1751" width="1" height="1" patternContentUnits="objectBoundingBox">
+          <use transform="matrix(.00153 0 0 .00135 -.001 0)" xlinkHref="#image0_4242_1751"></use>
         </pattern>
         <image
           id="image0_4242_1751"

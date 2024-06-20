@@ -48,7 +48,7 @@ const ExpressSearch = () => {
 
   return (
     <div className="grid grid-rows-[1fr_auto] mt-4 rounded-lg overflow-hidden container mx-auto">
-      <div className="grid grid-cols-2 cursor-pointer">
+      <div className="grid grid-cols-1 xs:grid-cols-2 cursor-pointer">
         {tabConfig.map(({ Icon, name, value }) => (
           <div
             className={`flex gap-1 p-2 items-center transition-all before:content-[''] before:block 
@@ -67,7 +67,7 @@ const ExpressSearch = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-[4fr_1fr] items-center bg-peach/70 p-2 gap-4">
+      <div className="grid grid-cols-1 grid-rows-[1fr_5rem] lg:grid-rows-1 lg:grid-cols-[4fr_1fr] items-center bg-peach/70 p-2 gap-0 lg:gap-4">
         {searchType === 'location' ? (
           <LocationSearch control={control} cityOptions={cityOptions} fieldType={fieldType} />
         ) : (

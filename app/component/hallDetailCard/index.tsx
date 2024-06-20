@@ -1,13 +1,10 @@
 'use client';
 import { IPopularHallResult } from '@/app/services/queries/interface';
-import Image from 'next/image';
 import HallImage from './hallImage';
 import { convertToFarsiDigits } from '@/app/utils/formatNumber';
 import StartIcon from '../icons/starIcon';
 import LocationIcon from '../icons/locationIcon';
 import PriceIcon from '../icons/priceIcon';
-import { ErrorBoundaryHandler } from 'next/dist/client/components/error-boundary';
-import { NotFoundBoundary } from 'next/dist/client/components/not-found-boundary';
 
 const HallDetailCard = ({
   address,
