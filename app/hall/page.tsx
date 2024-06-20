@@ -1,7 +1,13 @@
-const Page = ({ searchParams }: any) => {
-  console.log('searchParams', searchParams?.fieldType);
+import HallBanner from './hallBanner';
+import SortBasedOn from './sortBasedOn';
 
-  return <div className="">p</div>;
+const Page = ({ searchParams }: any) => {
+  return (
+    <div className="flex flex-col gap-4">
+      <HallBanner />
+      <SortBasedOn />
+    </div>
+  );
 };
 
 export default Page;
