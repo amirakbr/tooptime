@@ -26,7 +26,7 @@ const navbarConfig: INavbarConfig[] = [
   {
     name: 'جستجوی پیشرفته',
     Icon: SearchIcon,
-    link: '/hall',
+    link: '/halls',
   },
   {
     name: 'آموزش رزرو',
