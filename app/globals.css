@@ -1,5 +1,5 @@
-@import 'fonts.css';
-
+@import "fonts.css";
+@import "nouislider/dist/nouislider.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'IRANSans' !important;
+  font-family: "IRANSans" !important;
   user-select: none;
 }
 
@@ -20,4 +20,69 @@ html,
 body {
   height: 100%;
   margin: 0;
+}
+
+/* SliderComponent.css */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.noUi-horizontal {
+  height: 4px; /* Thinner main line */
+  background: #ffa500; /* Orange color */
+  border-radius: 2px;
+  border: none;
+}
+
+.noUi-connect {
+  background: #ffa500; /* Orange color */
+  border-radius: 2px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 2px solid #ffa500; /* Orange border */
+  border-radius: 50%;
+  top: -9px; /* Adjusted to align handles with thinner line */
+  right: -10px;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none !important;
+}
+
+.noUi-tooltip {
+  background-color: #ff6347;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.slider-label-left,
+.slider-label-right {
+  font-size: 14px;
+  color: #ff0000;
 }

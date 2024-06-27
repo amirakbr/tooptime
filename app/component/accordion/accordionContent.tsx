@@ -12,9 +12,9 @@ const AccordionContent = ({
     <div
       className={`grid ${
         isContentOpen ? "grid-rows-1 animate-appear" : "grid-rows-[0]"
-      } transition-all`}
+      } transition-all mr-1`}
     >
-      {children}
+      <div className="flex flex-col gap-2">{children}</div>
     </div>
   );
 };

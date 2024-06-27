@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios , {AxiosRequestConfig} from 'axios';
 import { IResponse } from './interface';
 
 const proxy = axios.create({ baseURL: 'https://tooptime.com/api/' });
