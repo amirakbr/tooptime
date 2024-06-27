@@ -26,7 +26,7 @@ const navbarConfig = [
 
 const FooterSection = () => {
   return (
-    <footer className="flex flex-col xs:flex-row gap-8 items-start xs:items-center justify-between bg-primary/90 px-3 py-6 backdrop-blur-sm text-white mt-10 z-[1] relative">
+    <footer className="flex flex-col xs:flex-row gap-8 items-start xs:items-center justify-between bg-primary px-3 py-6 backdrop-blur-sm text-white mt-10 z-[1] relative">
       <Link href="/" title="صفحه اصلی" className="flex items-center justify-center gap-2 w-full xs:w-auto">
         <ToopitaLogo width={120} height={140} key="toopita logo" />
       </Link>

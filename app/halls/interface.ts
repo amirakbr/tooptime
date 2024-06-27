@@ -1,9 +1,11 @@
-import { Control } from "react-hook-form";
+import { Control, UseFormSetValue, UseFormClearErrors } from "react-hook-form";
 
 export interface IFiltersForm {
   citiesList: any;
   fieldsList: any;
   gender: any;
+  startPrice: number;
+  endPrice: number;
 }
 
 export interface IHallsListFilterConfig {
@@ -21,5 +23,14 @@ export interface IAccordionFilterProps {
   icon: (allProps: any) => JSX.Element;
   options: any[];
   control: Control<IFiltersForm>;
-  name: keyof IFiltersForm;
+  name: Exclude<keyof IFiltersForm, "startPrice" | "endPrice">;
+}
+
+export interface IFiltersProps {
+  price: number[];
+  setValue: UseFormSetValue<IFiltersForm>;
+  control: Control<IFiltersForm>;
+  startPrice: number;
+  endPrice: number;
+  handleSubmitFilters: () => void;
 }

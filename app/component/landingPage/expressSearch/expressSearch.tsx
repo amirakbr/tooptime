@@ -53,7 +53,7 @@ const ExpressSearch = () => {
           <div
             className={`flex gap-1 p-2 items-center transition-all before:content-[''] before:block 
                 before:h-full before:w-1 before:rounded-full before:ml-2 before:transition-all
-                ${searchType === value ? 'bg-peach before:bg-amber-800' : 'bg-peach/30 before:bg-transparent'}`}
+                ${searchType === value ? 'bg-peach before:bg-amber-800' : 'bg-peach-light before:bg-transparent'}`}
             date-tabValue={value}
             onClick={({ currentTarget }: any) => {
               if (currentTarget) {
@@ -67,7 +67,7 @@ const ExpressSearch = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 grid-rows-[1fr_5rem] lg:grid-rows-1 lg:grid-cols-[4fr_1fr] items-center bg-peach/70 p-2 gap-0 lg:gap-4">
+      <div className="grid grid-cols-1 grid-rows-[1fr_5rem] lg:grid-rows-1 lg:grid-cols-[4fr_1fr] items-center bg-peach-light p-2 gap-0 lg:gap-4">
         {searchType === 'location' ? (
           <LocationSearch control={control} cityOptions={cityOptions} fieldType={fieldType} />
         ) : (

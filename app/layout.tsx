@@ -1,8 +1,8 @@
-'use client';
-import './globals.css';
-import HeaderSection from './component/header/header';
-import FooterSection from './component/footer/footer';
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+"use client";
+import "./styles/global.css";
+import HeaderSection from "./component/header/header";
+import FooterSection from "./component/footer/footer";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 export default function RootLayout({
   children,
@@ -21,7 +21,7 @@ export default function RootLayout({
         <div className="relative h-full flex flex-col">
           <HeaderSection />
           {children}
-          {pathName === '/' ? (
+          {pathName === "/" ? (
             <div className="flex flex-col justify-evenly gap-8 mt-8 min-h-full">
               {discountersSalonsHall}
               {popularSalonsHall}

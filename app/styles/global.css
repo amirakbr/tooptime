@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #de866a;
+  --gray: #e6e6e6;
+  --peach: #e2a08c;
+  --peach-light: #e2a08c7c;
+  --darkPeach: #cc9380;
+  --darkerPeach: #955845;
+  --dark-orange: #e26a42e0;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
   @apply text-base
@@ -38,25 +48,26 @@ body {
 }
 
 .noUi-horizontal {
-  height: 4px; /* Thinner main line */
-  background: #ffa500; /* Orange color */
+  height: 10px;
   border-radius: 2px;
   border: none;
 }
 
 .noUi-connect {
-  background: #ffa500; /* Orange color */
+  background: var(--dark-orange); /* Orange color */
   border-radius: 2px;
 }
 
 .noUi-horizontal .noUi-handle {
   width: 20px;
   height: 20px;
-  background-color: #ffffff;
-  border: 2px solid #ffa500; /* Orange border */
+  background-color: var(--dark-orange);
+  border: 2px solid var(--darkerPeach); /* Orange border */
   border-radius: 50%;
-  top: -9px; /* Adjusted to align handles with thinner line */
-  right: -10px;
+  right: unset !important;
+  left: -9.9px !important;
+  top: -5px;
+  box-shadow: none !important;
 }
 
 .noUi-handle:before,
@@ -65,7 +76,7 @@ body {
 }
 
 .noUi-tooltip {
-  background-color: #ff6347;
+  background-color: var(--dark-orange);
   color: #fff;
   border-radius: 3px;
   padding: 5px;
