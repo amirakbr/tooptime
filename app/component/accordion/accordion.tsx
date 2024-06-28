@@ -21,7 +21,7 @@ const Accordion = ({
   };
   return (
     <div
-      className={`flex flex-col ${
+      className={`flex flex-col py-1 border-t-2 border-t-primary ${
         isAccordionContentOpen ? "gap-2" : "gap-0"
       } overflow-hidden transition-all ${className}`}
     >

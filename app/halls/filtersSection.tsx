@@ -45,7 +45,7 @@ const FiltersSection = () => {
   const { endPrice, startPrice } = watch();
 
   return (
-    <div className="flex flex-col gap-2 border border-1 border-red-900 p-1">
+    <div className="flex flex-col gap-2 p-1">
       <div className="flex items-center justify-between">
         <TextWithIconContainer>
           <FiltersIcon width={20} height={25} color="black" />
